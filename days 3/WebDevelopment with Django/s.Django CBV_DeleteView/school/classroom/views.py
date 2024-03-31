@@ -16,7 +16,7 @@ class TeacherCreateView(CreateView):
     model=Teacher
     #automaticaly look for teache_form.html
     fields="__all__"
-    success_url=reverse_lazy('classroom:thank_you')
+    success_url = reverse_lazy('classroom:teacher_list')
 
 
 class TeacherListView(ListView):
@@ -35,7 +35,7 @@ class TeacherUpdateView (UpdateView):
     success_url = reverse_lazy('classroom:teacher_list')
 
 
-class TeacherDeleteView (UpdateView):
+class TeacherDeleteView (DeleteView):
     model = Teacher
     success_url = reverse_lazy('classroom:teacher_list')
     
