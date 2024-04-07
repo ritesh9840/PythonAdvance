@@ -1,6 +1,8 @@
 # URLS Catalog 
 from django.urls import path 
 from . import views 
+from django.contrib.auth import views as auth_views
+
 
 
 urlpatterns = [
@@ -9,5 +11,6 @@ urlpatterns = [
     path('book/<int:pk>/',views.BookDetail.as_view(),name='book_detail'),
     path('my_view',views.my_view,name='my_view'),
     path('signup/',views.SignUpView.as_view(),name='signup'),
-    path('profile/',views.CheckedOutBooksByUserView.as_view(),name='profile') 
+    path('profile/',views.CheckedOutBooksByUserView.as_view(),name='profile'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout') 
 ]
